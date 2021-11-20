@@ -47,10 +47,6 @@ img {
   vertical-align: bottom;
 }
 
-/* img, .fadein {
-  transform: translateY(0px);
-} */
-
 body {
   margin: 0;
   text-align: center;
@@ -61,7 +57,7 @@ header {
   position: relative;
   opacity: 0;
   z-index: 1;
-  animation: fadeIn 1.8s ease-in-out 1 forwards;
+  animation: fadeIn 1.5s ease-in-out 1 forwards;
 }
 @keyframes fadeIn {
   0% {
@@ -102,6 +98,7 @@ header {
     transform: rotate(360deg);
   }
 }
+/* ハンバーガーメニューの周りを回る円弧 */
 .menu-btn:after {
   content: '';
   height: 24px;
@@ -144,11 +141,11 @@ header {
 #menu-btn-check:checked ~ .menu-btn {
   animation: none;
 }
-/* ≡の周りを回るアニメを無効 */
+/* ≡の周りを回る円弧を無効 */
 /* #menu-btn-check:checked ~ .menu-btn:after {
   animation: none;
 } */
-/*メニューオープン時は中線を透明に*/
+/* ≡を回転させるアニメ */
 #menu-btn-check:checked ~ .menu-btn span {
   background-color: rgba(255, 255, 255, 0);
 }
@@ -197,14 +194,7 @@ header {
   display: block;
   animation: fadeIn 1s ease-in-out 1 forwards;
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .menu-content ul {
   /* padding: 50px 10px 0; */
   margin-top: 5vh;
@@ -285,7 +275,6 @@ header > img {
 }
 
 .logo-button {
-  /* background: rgba(1, 255, 35, 0.698); */
   position: absolute;
   bottom: -75px;
   width: 100%;
@@ -294,7 +283,6 @@ header > img {
 }
 
 .soap-logo {
-  /* background: rgba(135, 207, 235, 0.671); */
   width: 52rem;
   margin-left: 4vw;
 }
@@ -390,15 +378,7 @@ ul#btnblock {
 
 #appeal img {
   opacity: 0;
-  animation: fadeIn 1.8s ease-in-out 1.2s 1 forwards;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation: fadeIn 1.5s ease-in-out 1.2s 1 forwards;
 }
 
 /* スクロールアニメーションさせるセレクターをまとめる */
@@ -717,7 +697,7 @@ footer p {
   }
 
   .logo-button {
-    bottom: -124px;
+    bottom: -110px;
   }
 
   .soap-logo {

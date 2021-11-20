@@ -706,6 +706,7 @@ footer p {
   }
   
   .soap-logo h1 {
+    font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', 'MS PGothic', sans-serif;
     font-size: 4rem;
     letter-spacing: normal;
     line-height: 4rem;

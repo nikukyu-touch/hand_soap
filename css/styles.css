@@ -1,6 +1,8 @@
 /* common */
 html {
   font-size: 62.5%;
+  -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
   font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   /* リンクアイコンのサイズ */
   --common-link: 26px;

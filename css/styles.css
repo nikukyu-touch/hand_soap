@@ -71,8 +71,12 @@ header {
 }
 
 /* ハンバーガーメニュー */
+/* スマホ画面のみ表示 */
 .hmbg-menu {
   display: none;
+}
+#menu-btn-check {
+  display: none; /* チェックボックスを隠す */
 }
 .menu-btn {
   position: fixed;
@@ -83,39 +87,21 @@ header {
   width: 24px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   z-index: 90;
-  animation: Rotate 10s linear infinite forwards;
+}
+.menu-open {
+  animation: Rotate 8s linear infinite forwards;
 }
 @keyframes Rotate {
-  45% {
+  43% {
     transform: rotate(0);
   }
   50% {
     transform: rotate(180deg);
   }
-  95% {
+  93% {
     transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/* ハンバーガーメニューの周りを回る円弧 */
-.menu-btn:after {
-  content: '';
-  height: 24px;
-  width: 24px;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  /* animation: fliker 3s linear infinite forwards; */
-}
-@keyframes fliker {
-  60% {
-    border: 1px solid transparent;
-    transform: rotate(0);
-  }
-  80% {
-    border-bottom: 1px solid currentColor;
   }
   100% {
     transform: rotate(360deg);
@@ -132,74 +118,67 @@ header {
   border-radius: 2px;
   background-color: var(--txtcolor);
   position: absolute;
-  /* transition: all .5s ease-in-out; */
+}
+.menu-btn span {
+transition: background-color .4s .3s;
 }
 .menu-btn span:before {
   bottom: 6px;
+  transition: transform .3s, bottom .4s .3s;
 }
 .menu-btn span:after {
   top: 6px;
+  transition: transform .3s, top .4s .3s;
 }
+
 #menu-btn-check:checked ~ .menu-btn {
   animation: none;
 }
-/* ≡の周りを回る円弧を無効 */
-/* #menu-btn-check:checked ~ .menu-btn:after {
-  animation: none;
-} */
-/* ≡を回転させるアニメ */
+
+/* ≡を×にする効果 */
 #menu-btn-check:checked ~ .menu-btn span {
   background-color: rgba(255, 255, 255, 0);
+  transition: background-color .4s;
 }
 #menu-btn-check:checked ~ .menu-btn span:before {
-  animation: bttm-anm .6s linear 1 forwards;
+  bottom: 0;
+  transform: rotate(45deg);
+  transition: bottom .4s, transform .6s .4s;
 }
 #menu-btn-check:checked ~ .menu-btn span:after {
-  animation: top-anm .6s linear 1 forwards;
-}
-@keyframes bttm-anm {
-  50% {
-    bottom: 0;
-    transform: rotate(0);
-  }
-  100% {
-    bottom: 0;
-    transform: rotate(45deg);
-  }
-}
-@keyframes top-anm {
-  50% {
-    top: 0;
-    transform: rotate(0);
-  }
-  100% {
-    top: 0;
-    transform: rotate(-45deg);
-  }
+  top: 0;
+  transform: rotate(-45deg);
+  transition: top .4s, transform .6s .4s;
 }
 
-/* チェックボックスを隠す */
-#menu-btn-check {
-  display: none;
-}
 .menu-content {
-  width: 100%;
-  height: 100%;
+  /* display: none; */
+  display: flex;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
-  display: none;
   z-index: 80;
+  width: 100%;
+  height: 100%;
   background-color: rgba(200, 237, 251, 0.801);
+  opacity: 0;
+  transition: opacity 0.7s, transform 0s 0.7s;
+  transform: scale(0);
 }
 #menu-btn-check:checked ~ .menu-content {
-  display: block;
-  animation: fadeIn 1s ease-in-out 1 forwards;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1s;
+}
+.close_trigger {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .menu-content ul {
-  /* padding: 50px 10px 0; */
-  margin-top: 5vh;
+  margin: 6vh 0 0 0;
   list-style: none;
 }
 .menu-content ul li a {

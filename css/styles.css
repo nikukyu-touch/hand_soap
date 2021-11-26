@@ -94,18 +94,10 @@ header {
   animation: Rotate 8s linear infinite forwards;
 }
 @keyframes Rotate {
-  43% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  93% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  43% {transform: rotate(0);}
+  50% {transform: rotate(180deg);}
+  93% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
 }
 
 .menu-btn span,
@@ -462,7 +454,7 @@ footer nav a img {
 footer nav > a {
   font-size: 3.4rem;
   margin-left: 8rem;
-  /* width: 6.7em; */
+  line-height: 1;
 }
 
 footer ul {
@@ -479,6 +471,15 @@ footer li {
 
 footer li > a {
   font-size: 2.2rem;
+  line-height: 1;
+}
+
+footer nav > a,footer li > a {
+  border-bottom: 2px solid transparent;
+  transition: all .8s;
+}
+footer nav > a:hover,footer li > a:hover {
+  border-bottom: 2px solid currentColor;
 }
 
 footer p {
@@ -525,7 +526,7 @@ footer p {
   }
 
   nav.normal-menu li a {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .logo-button {
